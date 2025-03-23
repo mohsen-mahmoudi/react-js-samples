@@ -1,0 +1,14 @@
+#3=>
+npm init
+npm i -D webpack webpack-cli
+npm i react@18.2.0 react-dom@18.2.0
+npm i -D @babel/preset-env @babel/preset-react
+npm i -D html-webpack-plugin
+npm i -D webpack-dev-server
+
+
+#4=>
+npx create-react-app 4-create-project-with-npx
+
+#5=>
+npm create vite@latest 5-create-project-with-vite
