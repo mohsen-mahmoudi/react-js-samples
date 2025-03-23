@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom'
 
 export default class Counter extends React.Component {
 
+    // we can use this instead of arrow function!
+    // this is better performance instead of arrow funtions
+    // constructor() {
+    //     super()
+    //     this.decrease = this.decrease.bind(this);
+    // }
+
     state = {
         counter: 0
     }
