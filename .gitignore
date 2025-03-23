@@ -1,0 +1,67 @@
+# Root-level ignores
+**/node_modules/
+**/dist/
+**/build/
+**/coverage/
+**/.env*
+**/*.log
+
+# Example: Monorepo structure (e.g., packages/*)
+packages/*/node_modules  # Redundant but explicit
+packages/*/dist
+
+# Example: Client/Server structure
+client/.cache
+server/.tmp
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Node.js dependencies and build artifacts
+node_modules/
+dist/
+build/
+coverage/
+
+# Environment files (sensitive data)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache directories
+.npm
+.cache/
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.pnp.*
+
+# Testing
+.nyc_output
+
+# Editor directories and files
+*.swp
+*.swo
+
+# Dependency lockfiles (adjust based on your package manager)
+# Uncomment if using Yarn in a monorepo:
+# !yarn.lock
+# !packages/*/yarn.lock
+
+# Uncomment if using npm in a monorepo:
+# !package-lock.json
+# !packages/*/package-lock.json
