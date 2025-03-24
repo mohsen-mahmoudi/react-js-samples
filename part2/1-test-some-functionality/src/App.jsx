@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import CounterWithProp from './1-set-prop-to-component/CounterWithProp'
 import LifeCycle from './2-lifeCycle/LifeCycle'
+import UnMounting from './3-unmounting/UnMounting'
+import ErrorHandler from './4-error-boundary/Error'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,30 +13,17 @@ function App() {
   return (
     <>
       <div>
-        <CounterWithProp defaultValue={5} testProp/>
-        <CounterWithProp/>
-
-        <LifeCycle/>
-        
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {/* <CounterWithProp defaultValue={5} testProp />
+        <CounterWithProp /> */}
+        <p>============</p>
+        {/* <LifeCycle /> */}
+        <p>============</p>
+        {/* <UnMounting /> */}
+        <p>============</p>
+        <ErrorHandler />
+        <p>============</p>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
