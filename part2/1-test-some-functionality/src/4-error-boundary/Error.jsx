@@ -3,14 +3,32 @@ import { Component } from "react";
 /* you should handle error just by class */
 export default class ErrorHandler extends Component {
 
+    state = {
+        isError: false
+    }
+
     // we can catch and handle error in this method 
     // error will not go upper than this comopnent
     componentDidCatch(error) {
         // all app will not crashed!
         console.log('error raised', error);
+        this.setState({isError: true})
+    }
+
+    // this method do the same
+    static getDerivedStateFromError(error) {
+        console.log('error raised', error);
+        return {
+            isError : true
+        }
     }
 
     render() {
+        if (this.state.isError) {
+            return (
+                <h2>Ops..! Error Raised.</h2>
+            )
+        }
         return (
             <div>
                 <ChildErrorHandler />
@@ -28,7 +46,7 @@ class ChildErrorHandler extends Component {
     }
 
     componentDidUpdate() {
-        if(this.state.count  === 5) {
+        if (this.state.count === 5) {
             throw new Error('App Crashed!')
         }
     }
