@@ -19,6 +19,9 @@ import HOC from './part3/3-HOCs/App'
 import Stateless from './part3/4-stateless/Stateless'
 import ClassVsFunctionComponent from './part3/5-classVsFunctionComponent/ClassVsFunctionComponent'
 import UseSateFunctionComponent from './part3/6-useSate/ClassVsFunctionComponent'
+import UseEffectTest from './part3/7-useEffect/UseEffectTest'
+import AbortRequest from './part3/8-abortController/AbortRequest'
+import AdvancedEffect from './part3/9-advancedStateEffect/AdvancedEffect'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -43,7 +46,10 @@ function App() {
         {/* <HOC /> */}
         {/* <Stateless /> */}
         {/* <ClassVsFunctionComponent /> */}
-        <UseSateFunctionComponent />
+        {/* <UseSateFunctionComponent /> */}
+        {/* <UseEffectTest /> */}
+        {/* <AbortRequest /> */}
+        <AdvancedEffect />
       </div>
     </>
   )
