@@ -27,6 +27,9 @@ import CustomHook from './part3/10-customHook/CustomHook'
 import TodosUseState from './part3/11-todos/TodosUseState'
 import UseReducer from './part3/12-useReducer/UseReducer'
 import UseMemoTest from './part3/13-useMemo/UseMemoTest'
+import MemoComponent from './part5/MemoComponent'
+import UseRefTest from './part5/2-useRef/UseRefTest'
+import UseCallback from './part5/3-useCallback/UseCallback'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -59,6 +62,10 @@ function App() {
         {/* <TodosUseState /> */}
         {/* <UseReducer /> */}
         {/* <UseMemoTest /> */}
+
+        {/* <MemoComponent /> */}
+        {/* <UseRefTest /> */}
+        {/* <UseCallback /> */}
       </div>
     </>
   )
