@@ -30,6 +30,8 @@ import UseMemoTest from './part3/13-useMemo/UseMemoTest'
 import MemoComponent from './part5/MemoComponent'
 import UseRefTest from './part5/2-useRef/UseRefTest'
 import UseCallback from './part5/3-useCallback/UseCallback'
+import LoadHeavyJS from './part5/4-heavyLoad/LoadHeavyJS'
+import ContextApp from './part5/5-context/ContextApp'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -66,6 +68,8 @@ function App() {
         {/* <MemoComponent /> */}
         {/* <UseRefTest /> */}
         {/* <UseCallback /> */}
+        {/* <LoadHeavyJS /> */}
+        <ContextApp />
       </div>
     </>
   )
