@@ -8,7 +8,7 @@ export default class Header extends Component {
             <UserContext.Consumer>
                 {({ user, login, isLoading, isLoggedIn, logout }) => (
                     <ThemeContext.Consumer>
-                        {({ theme }) => (
+                        {theme => (
                             <div className='box header' style={theme}>
                                 <div>
                                     <h2>Header</h2>
