@@ -1,0 +1,5 @@
+npm i axios
+npm i js-cookie
+
+npm run build
+npm run dev
