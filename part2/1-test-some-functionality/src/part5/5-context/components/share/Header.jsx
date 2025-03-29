@@ -18,8 +18,9 @@ export default class Header extends Component {
                                         ('Loading...') :
                                         (isLoggedIn ?
                                             <span>
-                                                Hi, {user.name}
-                                                <span onClick={logout} className='logout'>Logout</span>
+                                                {user.name}
+                                                <span onClick={logout} className='logout'
+                                                    style={{ padding: '0.5em' }}>Logout</span>
                                             </span> :
                                             <span onClick={login}>Login</span>
                                         )

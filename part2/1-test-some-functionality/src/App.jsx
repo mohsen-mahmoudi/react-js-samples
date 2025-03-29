@@ -1,7 +1,7 @@
 import { Fragment, PureComponent, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+//import './App.css'
 
 import CounterWithProp from './part2/1-set-prop-to-component/CounterWithProp'
 import LifeCycle from './part2/2-lifeCycle/LifeCycle'
@@ -27,19 +27,21 @@ import CustomHook from './part3/10-customHook/CustomHook'
 import TodosUseState from './part3/11-todos/TodosUseState'
 import UseReducer from './part3/12-useReducer/UseReducer'
 import UseMemoTest from './part3/13-useMemo/UseMemoTest'
+
 import MemoComponent from './part5/MemoComponent'
 import UseRefTest from './part5/2-useRef/UseRefTest'
 import UseCallback from './part5/3-useCallback/UseCallback'
 import LoadHeavyJS from './part5/4-heavyLoad/LoadHeavyJS'
 import ContextApp from './part5/5-context/ContextApp'
 
+import TableApp from './part6/1-table/TableApp'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h2>Vite + React</h2>
-      <div>
+      <div style={{margin: '2em'}}>
         {/* <CounterWithProp defaultValue={5} testProp />
         <CounterWithProp />*/}
         {/* <LifeCycle />*/}
@@ -70,7 +72,9 @@ function App() {
         {/* <UseCallback /> */}
         {/* <LoadHeavyJS /> */}
         <ContextApp />
-      </div>
+
+        {/* <TableApp /> */}
+      </div> 
     </>
   )
 }
