@@ -33,3 +33,7 @@ a.active {
 li {
     list-style: none;
 }
+
+.form-item {
+    margin: 0.5rem
+}

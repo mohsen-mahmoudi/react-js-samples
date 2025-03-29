@@ -7,11 +7,6 @@ export default function AuthProvider({ children }) {
 
     const { user, login, isLoading, isLoggedIn, logout, getUser } = useAuth()
 
-    useEffect(() => {
-        if (getToken())
-            getUser()
-    }, [])
-
     return (
         <UserContext.Provider value={{ user, login, isLoading, isLoggedIn, logout }}>
             {children}

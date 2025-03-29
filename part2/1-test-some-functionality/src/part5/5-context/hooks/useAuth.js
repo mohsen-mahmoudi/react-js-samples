@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import RequestClient from '../tools/RequestClient';
-import { removeToken, setToken } from '../tools/Token';
+import { getToken, removeToken, setToken } from '../tools/Token';
+import useUser from './useUser';
 
 export default function useAuth() {
     const [user, setUser] = useState()
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
-    function login() {
+    function login(data) {
         setIsLoading(true)
-        RequestClient('/api/login', { method: 'POST', data: { username: 'mohsen', password: '123' } })
+        RequestClient('/api/login',
+            { method: 'POST', data })
             .then(response => {
                 // handle token in front
                 setToken(response.data.token)
@@ -39,6 +41,13 @@ export default function useAuth() {
         removeToken()
     }
 
+    useEffect(() => {
+        if (getToken()) {
+            getUser()
+        } else {
+            setIsLoading(false)
+        }
+    }, [])
 
     return ({ user, login, isLoading, isLoggedIn, logout, getUser })
 }
