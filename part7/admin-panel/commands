@@ -1,0 +1,6 @@
+npm create vite
+cd  admin-panel
+
+npm i
+npm i react-router-dom antd axios 
+npm run dev

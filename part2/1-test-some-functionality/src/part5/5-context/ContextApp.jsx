@@ -14,6 +14,7 @@ import Login from './components/auth/Login';
 import Profile from './components/profile/Profile';
 import Dashboard from './components/profile/Dashboard';
 import RequiredAuth from './tools/RequiredAuth';
+import PrivateRoute from './tools/PrivateRoute';
 
 // handling props drilling
 export default function ContextApp() {
@@ -29,8 +30,18 @@ export default function ContextApp() {
                             <Routes>
                                 <Route path='/' element={<Home />} />
                                 <Route path='/login' element={<Login />} />
-                                <Route path='/profile' element={<RequiredAuth component={<Profile />} />} />
-                                <Route path='/dashboard' element={<RequiredAuth component={<Dashboard />} />} />
+
+                                {/* {second way - better syntax} */}
+                                <Route element={<PrivateRoute />}>
+                                    <Route path='/profile' element={<Profile />} />
+                                    <Route path='/dashboard' element={<Dashboard />} />
+                                </Route>
+
+                                {/* {first way} */}
+                                {/* <Route path='/profile' element={<RequiredAuth component={<Profile />} />} />
+                                <Route path='/dashboard' element={<RequiredAuth component={<Dashboard />} />} /> */}
+
+
                                 <Route path='/about' element={<About />} />
                                 <Route path='/contact' element={<Contact />} />
                                 <Route path='/article/*' element={<ArticleRoute />} />
@@ -41,6 +52,6 @@ export default function ContextApp() {
                     </ThemeProvider>
                 </AuthProvider>
             </BrowserRouter>
-        </div>
+        </div >
     );
 }
