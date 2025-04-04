@@ -8,14 +8,14 @@ import {
 import { Link } from "react-router-dom";
 
 const items = [
-  { key: 'dashboard', icon: <DashboardOutlined />, label: 'داشبورد' },
+  { key: 'dashboard', icon: <DashboardOutlined />, label: <Link to='/'>داشبورد</Link> },
   {
     key: 'users',
-    label: <Link to='/'>کاربران</Link>,
+    label: 'کاربران',
     icon: <UserOutlined />,
     children: [
       { key: 'userslist', label: <Link to='/users'>لیست کاربران</Link> },
-      { key: 'usersadd', label: 'افزودن کاربر' },
+      { key: 'usersadd', label: <Link to='/users/add'>افزودن کاربر</Link> },
     ],
   },
   {
@@ -26,7 +26,7 @@ const items = [
       { key: 'paperslist', label: 'لیست مقالات' },
       { key: 'paperssadd', label: 'افزودن مقاله' },
     ],
-  },
+  }
 ];
 
 export default function Sidebar() {
