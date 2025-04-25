@@ -19,6 +19,15 @@ const items = [
     ],
   },
   {
+    key: 'users-redux1',
+    label: 'کاربران redux روش اول',
+    icon: <UserOutlined />,
+    children: [
+      { key: 'userslist-redux1', label: <Link to='/users-redux'>لیست کاربران</Link> },
+      { key: 'usersadd-redux1', label: <Link to='/users-redux/add'>افزودن کاربر</Link> },
+    ],
+  },
+  {
     key: 'papers',
     label: 'مقالات',
     icon: <EditOutlined />,

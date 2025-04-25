@@ -6,4 +6,8 @@ npm i react-router-dom antd axios
 npm install --save @persian-tools/persian-tools
 npm install antd-jalali-v5
 
+npm i redux
+npm i @reduxjs/toolkit
+npm i react-redux
+
 npm run dev

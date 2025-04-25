@@ -18,6 +18,11 @@ import UsersDetail from './users/UsersDetail';
 import UsersAdd from './users/UsersAdd';
 import UsersEdit from './users/UsersEdit';
 
+import UsersListRedxu from './users-redux/UsersList'
+import UsersDetailRedux from './users-redux/UsersDetail'
+import UsersAddRedux from './users-redux/UsersAdd'
+import UsersEditRedux from './users-redux/UsersEdit'
+
 function App() {
 
   const [messageApi, contextHolder] = message.useMessage();
@@ -41,6 +46,12 @@ function App() {
                 <Route path='/users/:id' element={<UsersDetail />} />
                 <Route path='/users/add' element={<UsersAdd />} />
                 <Route path='/users/:id/edit' element={<UsersEdit />} />
+
+                <Route path='/users-redux' element={<UsersListRedxu />} />,
+                <Route path='/users-redux/:id' element={<UsersDetailRedux />} />,
+                <Route path='/users-redux/add' element={<UsersAddRedux />} />,
+                <Route path='/users-redux/:id/edit' element={<UsersEditRedux />} />
+
               </Routes>
             </Content>
             <Footer />
