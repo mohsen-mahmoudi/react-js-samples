@@ -32,7 +32,7 @@ const items = [
     label: 'مقالات',
     icon: <EditOutlined />,
     children: [
-      { key: 'paperslist', label: 'لیست مقالات' },
+      { key: 'paperslist', label: <Link to='/posts'>لیست مقالات</Link> },
       { key: 'paperssadd', label: 'افزودن مقاله' },
     ],
   }

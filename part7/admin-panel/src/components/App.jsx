@@ -22,6 +22,7 @@ import UsersListRedxu from './users-redux/UsersList'
 import UsersDetailRedux from './users-redux/UsersDetail'
 import UsersAddRedux from './users-redux/UsersAdd'
 import UsersEditRedux from './users-redux/UsersEdit'
+import PostsList from './posts/PostsList';
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
                 <Route path='/users-redux/add' element={<UsersAddRedux />} />,
                 <Route path='/users-redux/:id/edit' element={<UsersEditRedux />} />
 
+                <Route path='/posts' element={<PostsList />} />
               </Routes>
             </Content>
             <Footer />
