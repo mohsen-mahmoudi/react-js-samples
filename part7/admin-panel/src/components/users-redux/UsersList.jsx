@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { DeleteOutlined, EditOutlined, EyeOutlined, LoadingOutlined } from '@ant-design/icons';
 import { Popconfirm } from 'antd';
 import { connect } from 'react-redux' // 1 way (it is a high order component [like wrapper])
+import { setLoading, setUsers } from '@/redux/actions/users';
 
 
 function UsersList({ users, setLoading, setUsersData, loading }) {
@@ -71,8 +72,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        setUsersData: (data) => dispatch({ type: "users-data", payload: data }),
-        setLoading: (flag) => dispatch({ type: "users-loading", payload: flag })
+        setUsersData: (data) => dispatch(setUsers(data)),
+        setLoading: (flag) => dispatch(setLoading(flag))
     };
 }
 

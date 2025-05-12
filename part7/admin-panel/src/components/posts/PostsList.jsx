@@ -4,15 +4,16 @@ import ClientRequest from '@/tools/ClientRequest'
 import { Link } from 'react-router-dom'
 import { DeleteOutlined, EditOutlined, EyeOutlined, LoadingOutlined } from '@ant-design/icons';
 import { Popconfirm } from 'antd';
-import { connect } from 'react-redux' // 1 way (it is a high order component [like wrapper])
+import { connect, useDispatch, useSelector } from 'react-redux' // 1 way (it is a high order component [like wrapper])
+import { setPosts } from '@/redux/actions/posts';
 
 
-function PostsList({posts, setPostsData}) {
+export default function PostsList() {
 
-    function getData() {
-        ClientRequest('/posts')
-            .then(({ data }) => setPostsData(data))
-    }
+    const dispatch = useDispatch()
+    const posts = useSelector(state => {
+        return state.posts
+    })
 
     const columns = [
         { title: 'شناسه', key: 'id' },
@@ -20,31 +21,18 @@ function PostsList({posts, setPostsData}) {
         {
             key: 'action',
             render: (el, r) => (<>
-                <Link style={{ marginLeft: '10px' }} to={`/posts/${r.id}`}><EyeOutlined /></Link>
-                <Link style={{ marginLeft: '10px' }} to={`/posts/${r.id}/edit`}><EditOutlined /></Link>
+                <Link style={{ marginLeft: '10px' }} to={`/post/${r.id}`}><EyeOutlined /></Link>
+                <Link style={{ marginLeft: '10px' }} to={`/post/${r.id}/edit`}><EditOutlined /></Link>
             </>)
         }
     ]
 
     useEffect(() => {
-        getData();
+        ClientRequest('/posts')
+            .then(({ data }) => dispatch(setPosts(data)))
     }, [])
 
     return (
         <Table data={posts} columns={columns} />
     )
 }
-
-function mapStateToProps(state) {
-    return {
-        posts: state.posts,
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        setPostsData: (data) => dispatch({ type: "posts-data", payload: data }),
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(PostsList);

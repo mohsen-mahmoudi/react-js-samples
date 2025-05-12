@@ -1,3 +1,16 @@
+import { combineReducers } from "redux";
+import { loading, users } from "./users";
+import { post, posts } from "./posts";
+
+// new way
+export default combineReducers({
+    users, loading, 
+    posts, post
+})
+
+
+/* // old way
+
 const initialState = {
     users: [],  // Holds user data
     loading: false, // Tracks loading state
@@ -16,3 +29,4 @@ export default function reducer(state = initialState, action) {
             return state;
     }
 }
+*/
